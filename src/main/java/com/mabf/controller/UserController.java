@@ -15,7 +15,7 @@ public class UserController {
     @RequestMapping("getUser")
     @ResponseBody
     public String getUser(){
-
+        final String vaf = "vaf";
         return "SpringBoot 有时非常非常非常香2020年6月24日16:14:57";
 
     }
