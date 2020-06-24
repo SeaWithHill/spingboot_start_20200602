@@ -16,7 +16,7 @@ public class UserController {
     @ResponseBody
     public String getUser(){
 
-        return "SpringBoot 真TMTMTM的香";
+        return "SpringBoot 有时很香";
 
     }
 
