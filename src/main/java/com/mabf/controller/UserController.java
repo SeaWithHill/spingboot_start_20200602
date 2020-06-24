@@ -16,7 +16,7 @@ public class UserController {
     @ResponseBody
     public String getUser(){
 
-        return "SpringBoot 有时很香";
+        return "SpringBoot 有时很香2020年6月24日16:14:57";
 
     }
 
