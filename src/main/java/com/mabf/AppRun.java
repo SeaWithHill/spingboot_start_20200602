@@ -1,13 +1,9 @@
 package com.mabf;
 
-import com.mabf.filter.UserFilter;
-import com.mabf.filter.UserFilter1;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.annotation.Bean;
 
 /**
  * 启动类规则
@@ -23,36 +19,36 @@ public class AppRun {
         SpringApplication.run(AppRun.class, args);
     }
 
-    @Bean
-    public  FilterRegistrationBean filter(UserFilter userFilter){
-        FilterRegistrationBean  filterRegistration1 = new FilterRegistrationBean();
-        filterRegistration1.setFilter(userFilter);
-        filterRegistration1.setName("userFilter");
-        filterRegistration1.addUrlPatterns("/*");
-        filterRegistration1.setOrder(10);
-        return  filterRegistration1;
-    }
-
-    @Bean
-    public FilterRegistrationBean filter1(UserFilter1 userFilter1){
-        FilterRegistrationBean filterRegistrationBean1 = new FilterRegistrationBean();
-        filterRegistrationBean1.setFilter(userFilter1);
-        filterRegistrationBean1.setName("userFilter1");
-        filterRegistrationBean1.addUrlPatterns("/*");
-        filterRegistrationBean1.setOrder(10);
-        return  filterRegistrationBean1;
-
-
-    }
-
-    @Bean
-    public UserFilter userFilter(){
-        return new UserFilter();
-    }
-    @Bean
-    public UserFilter1 userFilter1(){
-        return new UserFilter1();
-    }
+//    @Bean
+//    public  FilterRegistrationBean filter(UserFilter userFilter){
+//        FilterRegistrationBean  filterRegistration1 = new FilterRegistrationBean();
+//        filterRegistration1.setFilter(userFilter);
+//        filterRegistration1.setName("userFilter");
+//        filterRegistration1.addUrlPatterns("/*");
+//        filterRegistration1.setOrder(10);
+//        return  filterRegistration1;
+//    }
+//
+//    @Bean
+//    public FilterRegistrationBean filter1(UserFilter1 userFilter1){
+//        FilterRegistrationBean filterRegistrationBean1 = new FilterRegistrationBean();
+//        filterRegistrationBean1.setFilter(userFilter1);
+//        filterRegistrationBean1.setName("userFilter1");
+//        filterRegistrationBean1.addUrlPatterns("/*");
+//        filterRegistrationBean1.setOrder(10);
+//        return  filterRegistrationBean1;
+//
+//
+//    }
+//
+//    @Bean
+//    public UserFilter userFilter(){
+//        return new UserFilter();
+//    }
+//    @Bean
+//    public UserFilter1 userFilter1(){
+//        return new UserFilter1();
+//    }
 
 
 

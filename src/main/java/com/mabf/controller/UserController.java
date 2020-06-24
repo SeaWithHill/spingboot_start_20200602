@@ -2,7 +2,6 @@ package com.mabf.controller;
 
 
 import com.mabf.entity.User;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +10,13 @@ import java.util.ArrayList;
 
 @RestController
 public class UserController {
+
+
     @RequestMapping("getUser")
     @ResponseBody
     public String getUser(){
 
-        return "SpringBoot 真香";
+        return "SpringBoot 真TMTMTM的香";
 
     }
 
