@@ -16,7 +16,7 @@ public class UserController {
     @ResponseBody
     public String getUser(){
         final String vaf = "vaf";
-        return "SpringBoot 热部署";
+        return "SpringBoot 热部署2020年6月27日14:31:50";
 
     }
 
