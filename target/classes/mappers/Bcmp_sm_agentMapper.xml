@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mabf.dao.Bcmp_sm_agentMapper" >
+  <resultMap id="BaseResultMap" type="com.mabf.entity.Bcmp_sm_agent" >
+    <id column="agent_id" property="agentId" jdbcType="VARCHAR" />
+    <result column="host_name" property="hostName" jdbcType="VARCHAR" />
+    <result column="host_address" property="hostAddress" jdbcType="VARCHAR" />
+    <result column="os_name" property="osName" jdbcType="VARCHAR" />
+    <result column="rmi_port" property="rmiPort" jdbcType="VARCHAR" />
+    <result column="socket_port" property="socketPort" jdbcType="VARCHAR" />
+    <result column="http_port" property="httpPort" jdbcType="VARCHAR" />
+    <result column="registry_time" property="registryTime" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="socket_status" property="socketStatus" jdbcType="VARCHAR" />
+    <result column="http_status" property="httpStatus" jdbcType="VARCHAR" />
+    <result column="app_workspace" property="appWorkspace" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    agent_id, host_name, host_address, os_name, rmi_port, socket_port, http_port, registry_time, 
+    version, status, socket_status, http_status, app_workspace
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from bcmp_sm_agent
+    where agent_id = #{agentId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from bcmp_sm_agent
+    where agent_id = #{agentId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mabf.entity.Bcmp_sm_agent" >
+    insert into bcmp_sm_agent (agent_id, host_name, host_address, 
+      os_name, rmi_port, socket_port, 
+      http_port, registry_time, version, 
+      status, socket_status, http_status, 
+      app_workspace)
+    values (#{agentId,jdbcType=VARCHAR}, #{hostName,jdbcType=VARCHAR}, #{hostAddress,jdbcType=VARCHAR}, 
+      #{osName,jdbcType=VARCHAR}, #{rmiPort,jdbcType=VARCHAR}, #{socketPort,jdbcType=VARCHAR}, 
+      #{httpPort,jdbcType=VARCHAR}, #{registryTime,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{socketStatus,jdbcType=VARCHAR}, #{httpStatus,jdbcType=VARCHAR}, 
+      #{appWorkspace,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mabf.entity.Bcmp_sm_agent" >
+    insert into bcmp_sm_agent
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="agentId != null" >
+        agent_id,
+      </if>
+      <if test="hostName != null" >
+        host_name,
+      </if>
+      <if test="hostAddress != null" >
+        host_address,
+      </if>
+      <if test="osName != null" >
+        os_name,
+      </if>
+      <if test="rmiPort != null" >
+        rmi_port,
+      </if>
+      <if test="socketPort != null" >
+        socket_port,
+      </if>
+      <if test="httpPort != null" >
+        http_port,
+      </if>
+      <if test="registryTime != null" >
+        registry_time,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="socketStatus != null" >
+        socket_status,
+      </if>
+      <if test="httpStatus != null" >
+        http_status,
+      </if>
+      <if test="appWorkspace != null" >
+        app_workspace,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="agentId != null" >
+        #{agentId,jdbcType=VARCHAR},
+      </if>
+      <if test="hostName != null" >
+        #{hostName,jdbcType=VARCHAR},
+      </if>
+      <if test="hostAddress != null" >
+        #{hostAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="osName != null" >
+        #{osName,jdbcType=VARCHAR},
+      </if>
+      <if test="rmiPort != null" >
+        #{rmiPort,jdbcType=VARCHAR},
+      </if>
+      <if test="socketPort != null" >
+        #{socketPort,jdbcType=VARCHAR},
+      </if>
+      <if test="httpPort != null" >
+        #{httpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="registryTime != null" >
+        #{registryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="socketStatus != null" >
+        #{socketStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="httpStatus != null" >
+        #{httpStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="appWorkspace != null" >
+        #{appWorkspace,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mabf.entity.Bcmp_sm_agent" >
+    update bcmp_sm_agent
+    <set >
+      <if test="hostName != null" >
+        host_name = #{hostName,jdbcType=VARCHAR},
+      </if>
+      <if test="hostAddress != null" >
+        host_address = #{hostAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="osName != null" >
+        os_name = #{osName,jdbcType=VARCHAR},
+      </if>
+      <if test="rmiPort != null" >
+        rmi_port = #{rmiPort,jdbcType=VARCHAR},
+      </if>
+      <if test="socketPort != null" >
+        socket_port = #{socketPort,jdbcType=VARCHAR},
+      </if>
+      <if test="httpPort != null" >
+        http_port = #{httpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="registryTime != null" >
+        registry_time = #{registryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="socketStatus != null" >
+        socket_status = #{socketStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="httpStatus != null" >
+        http_status = #{httpStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="appWorkspace != null" >
+        app_workspace = #{appWorkspace,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where agent_id = #{agentId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mabf.entity.Bcmp_sm_agent" >
+    update bcmp_sm_agent
+    set host_name = #{hostName,jdbcType=VARCHAR},
+      host_address = #{hostAddress,jdbcType=VARCHAR},
+      os_name = #{osName,jdbcType=VARCHAR},
+      rmi_port = #{rmiPort,jdbcType=VARCHAR},
+      socket_port = #{socketPort,jdbcType=VARCHAR},
+      http_port = #{httpPort,jdbcType=VARCHAR},
+      registry_time = #{registryTime,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      socket_status = #{socketStatus,jdbcType=VARCHAR},
+      http_status = #{httpStatus,jdbcType=VARCHAR},
+      app_workspace = #{appWorkspace,jdbcType=VARCHAR}
+    where agent_id = #{agentId,jdbcType=VARCHAR}
+  </update>
+</mapper>
