@@ -27,6 +27,7 @@ public class AB implements A,B {
         BigDecimal bigDecimal11 = new BigDecimal("1.01");
         BigDecimal bigDecimal12 = new BigDecimal("2.02");
         System.out.println(bigDecimal.add(bigDecimal2));
+        System.out.println(bigDecimal.add(bigDecimal2));
         System.out.println(bigDecimal11.add(bigDecimal12));
     }
 
