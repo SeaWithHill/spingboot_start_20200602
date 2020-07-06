@@ -13,21 +13,20 @@ import java.util.UUID;
 import java.util.concurrent.locks.ReentrantLock;
 
 @RestController
-public class UserController {
-    public final static Logger logger = LoggerFactory.getLogger(UserController.class);
+public class UserController1 {
+    public final static Logger logger = LoggerFactory.getLogger(UserController1.class);
 
 
-    @RequestMapping("getUser")
+    @RequestMapping("getUser4445")
     @ResponseBody
     public String getUser(){
         final String vaf = "vaf";
         ReentrantLock reentrantLock = new ReentrantLock();
         ReentrantLock reentrantLock1 = new ReentrantLock(false);
         return "SpringBoot 显示中文14:31:50";
-
     }
 
-    @RequestMapping("getUser2")
+    @RequestMapping("getUser4444444445")
     @ResponseBody
     public String getUser2(){
         final String vaf = "vaf";
