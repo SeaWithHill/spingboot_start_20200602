@@ -10,9 +10,11 @@ import org.slf4j.LoggerFactory;
 public class RunnableUser2 implements  Runnable{
     private static Logger logger = LoggerFactory.getLogger(RunnableUser1.class);
     @Override
-    public void run() {
+    public void run()  {
         int c = 100;
         int d = 100;
         logger.info("c plus d values {}",c+d);
     }
+
+
 }

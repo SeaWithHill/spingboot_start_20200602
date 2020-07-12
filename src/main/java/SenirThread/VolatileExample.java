@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author mabf
  * @create 2020-07-10 22:04
+ * 用来显测试测试
  */
 public class VolatileExample {
     private static Logger logger = LoggerFactory.getLogger(VolatileExample.class);
