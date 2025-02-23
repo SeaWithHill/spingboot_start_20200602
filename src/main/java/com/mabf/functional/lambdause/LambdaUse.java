@@ -1,4 +1,4 @@
-package com.mabf.functional;
+package com.mabf.functional.lambdause;
 
 public class LambdaUse {
     public static void main(String[] args) {

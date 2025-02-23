@@ -1,23 +1,19 @@
 package com.mabf.functional.lambdause;
 
 
-import java.util.function.IntBinaryOperator;
-public class IntBinaryOperatorUsage {
+import java.util.function.Predicate;
+
+public class IntPredictorOperatorUsage {
 
 
-    public static int calculate(IntBinaryOperator intBinaryOperator, int a, int b) {
-        int i = intBinaryOperator.applyAsInt(a, b);
-        return i;
+    @SuppressWarnings("unchecked")
+    public static boolean calculate(Predicate predicate, Integer a, Integer b) {
+        return predicate.test(a);
     }
 
     public static void main(String[] args) {
-        int calculate = calculate(new IntBinaryOperator() {
-            @Override
-            public int applyAsInt(int left, int right) {
-                return 0;
-            }
-        },1,2);
-        System.out.println(calculate);
+        boolean calculate = calculate(o -> false, 1, 2);
+        System.out.println(calculate);//false,
     }
 
 }

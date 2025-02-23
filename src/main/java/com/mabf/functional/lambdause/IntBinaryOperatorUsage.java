@@ -1,11 +1,23 @@
 package com.mabf.functional.lambdause;
 
-import org.testng.annotations.Test;
-import static org.testng.Assert.assertEquals;
 
+import java.util.function.IntBinaryOperator;
 public class IntBinaryOperatorUsage {
 
-    public static int calculate(int a, int b) {
-        return a + b;
+
+    public static int calculate(IntBinaryOperator intBinaryOperator, int a, int b) {
+        int i = intBinaryOperator.applyAsInt(a, b);
+        return i;
     }
+
+    public static void main(String[] args) {
+        int calculate = calculate(new IntBinaryOperator() {
+            @Override
+            public int applyAsInt(int left, int right) {
+                return 0;
+            }
+        },1,2);
+        System.out.println(calculate);
+    }
+
 }
