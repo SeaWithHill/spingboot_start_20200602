@@ -1,9 +1,21 @@
 package com.mabf.entity;
 
+import java.util.List;
+
 public class Author implements Comparable<Author> {
     // 定义作家的属性
     private String name;
     private int age;
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    private List<Book> books;
 
     // 构造函数
     public Author(String name, int age) {

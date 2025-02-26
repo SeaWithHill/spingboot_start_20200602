@@ -1,11 +1,11 @@
-package com.mabf.functional.finaloperate;
+package com.mabf.functional.optionaluse;
 
 import com.mabf.entity.Author;
 
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class streamoptional {
+public class optionalifpresent {
     public static void main(String[] args) {
         Author author = new Author("Steve", 11);
         Optional<Author> authorOptional = Optional.ofNullable(author);

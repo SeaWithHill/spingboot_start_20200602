@@ -1,11 +1,11 @@
-package com.mabf.functional.finaloperate;
+package com.mabf.functional.optionaluse;
 
 
 import com.mabf.entity.Author;
 
 import java.util.Optional;
 
-public class streamoptional1 {
+public class optionalorelse {
     @SuppressWarnings("unused")
     public static void main(String[] args) throws Throwable {
         Optional<Author> authorOptional = Optional.ofNullable(new Author("Steve", 11));

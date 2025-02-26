@@ -3,10 +3,11 @@ package com.mabf.functional.finaloperate;
 import com.mabf.entity.Author;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class streamfindany {
+public class streamfindfirst {
     public static void main(String[] args) {
         // 创建五个Author对象，其中两个对象的年龄相同
         Author author1 = new Author("Alice", 30);
@@ -17,10 +18,21 @@ public class streamfindany {
 
         // 将Author对象放入列表中
         List<Author> authors = Arrays.asList(author1, author2,author3,author4,author5);
-        Optional<Author> any = authors.stream()
-                .filter(author -> author.getAge() > 25)
-                .findAny();
-        any.ifPresent(author -> System.out.println(author.getName()));
+        Optional<Author> find = authors.stream()
+                .sorted((o1, o2) -> o1.getAge() - o2.getAge())
+                .findFirst();
+        find.ifPresent(author -> System.out.println(author.getName()));
+
+        // 将Author对象放入列表中
+        Optional<Author> min = authors.stream()
+                .min(new Comparator<Author>() {
+                    @Override
+                    public int compare(Author o1, Author o2) {
+                        return o1.getAge() - o2.getAge();
+                    }
+                });
+        min.ifPresent(author -> System.out.println(author.getName()));
+
 
 
 

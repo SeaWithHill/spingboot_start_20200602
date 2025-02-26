@@ -4,19 +4,21 @@ import com.mabf.entity.Author;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 
-public class streamreduce {
+public class streamreduce1 {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9,10};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int sum = 0;
         for (int i : arr) {
             sum = sum + i;
         }
         System.out.println(sum);
-        test02();
+        test03();
     }
 
-    private static void test02() {
+    private static void test03() {
         // 创建五个Author对象，其中两个对象的年龄相同
         Author author1 = new Author("Alice", 30);
         Author author2 = new Author("Bob", 25);
@@ -27,8 +29,20 @@ public class streamreduce {
         List<Author> authors = Arrays.asList(author1, author2);
         Integer identity = 0;
         Integer reduce = authors.stream()
-                .map(author -> author.getAge())
-                .reduce(identity, (o, o2) -> o + o2);
+                .map(new Function<Author, Integer>() {
+                    @Override
+                    public Integer apply(Author author) {
+                        return author.getAge();
+                    }
+                })
+                .reduce(Integer.MIN_VALUE, new BinaryOperator<Integer>() {
+                    @Override
+                    public Integer apply(Integer integer, Integer integer2) {
+                        return integer > integer2 ? integer : integer2;
+                    }
+                });
         System.out.println(reduce);
+
     }
+
 }
